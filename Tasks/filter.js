@@ -1,12 +1,11 @@
 // Filter array by type name
 
-'use strict';
+Filter =(T,t)=> {
+for (C of T) {
+x = T.indexOf(C);
+if (typeof T[x] !== t) { T.splice(x, 1) }; };
+return T;
+}
 
-const Filter = (typesForFilter, typeName) => {
-  for (const arrayElement of typesForFilter) {
-    if (typeof typesForFilter[arrayElement] !== typeName) { typesForFilter.splice(arrayElement, 1); }
-  }
-  return typesForFilter;
-};
-
-console.log(Filter([1, 2, 'three', 4, 5, 'six'], 'number'));
+const result = Filter([1, 2, 'three', 4, 5, 'six'], 'number');
+console.log(result);
